@@ -1,18 +1,21 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+// The binary (and so the crate) is called "Pluma" so the file is Pluma.exe.
+#![allow(non_snake_case)]
 
 //! Pluma: ultralight configurator for Logitech G mice (a minimal G HUB alternative).
 //!
-//! - `pluma`                opens the settings window (fully exits when closed)
-//! - `pluma --tray`         tray agent: battery and reapplying settings after wake-up
-//! - `pluma --status`       one line with the mouse state (read-only)
-//! - `pluma --probe [file]` read-only diagnostics
-//! - `pluma --dump [file]`  onboard memory dump (read-only)
-//! - `pluma --select 0x01`  activates a profile without writing memory (debugging)
+//! - `Pluma`                opens the settings window (fully exits when closed)
+//! - `Pluma --tray`         tray agent: battery and reapplying settings after wake-up
+//! - `Pluma --status`       one line with the mouse state (read-only)
+//! - `Pluma --probe [file]` read-only diagnostics
+//! - `Pluma --dump [file]`  onboard memory dump (read-only)
+//! - `Pluma --select 0x01`  activates a profile without writing memory (debugging)
 
 mod agent;
 mod config;
 mod device;
 mod hidpp;
+mod icon;
 mod log;
 mod onboard;
 mod probe;

@@ -7,6 +7,11 @@ license = "MIT"
 repository = "https://github.com/estebansa19/pluma"
 publish = false
 
+# The executable is named Pluma.exe (the package keeps the usual lowercase name).
+[[bin]]
+name = "Pluma"
+path = "src/main.rs"
+
 [dependencies]
 # UI: egui painted on the CPU (src/shell.rs). No eframe/OpenGL: the GPU driver alone added
 # ~130 MB of RAM just to open the window.
@@ -16,6 +21,10 @@ winit = { version = "0.30", default-features = false, features = ["rwh_06"] }
 hidapi = { version = "2.6", default-features = false, features = ["windows-native"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+
+[build-dependencies]
+# Compresses the 256 px PNG embedded in the exe icon (build time only).
+miniz_oxide = "0.8"
 
 [dependencies.windows-sys]
 version = "0.59"

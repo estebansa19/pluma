@@ -1,4 +1,4 @@
-//! `pluma --tray`: minimal system tray agent (no graphics engine, a few MB at most).
+//! `Pluma --tray`: minimal system tray agent (no graphics engine, a few MB at most).
 //!
 //! - Shows the battery level in the tooltip.
 //! - When the mouse wakes up (receiver notification, 0x1D4B event, the cursor moves after

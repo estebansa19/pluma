@@ -6,7 +6,7 @@ use crate::hidpp::{self, VID_LOGITECH};
 use crate::onboard;
 use std::fmt::Write;
 
-/// `pluma --probe [file]`: read-only diagnostics (writes nothing to the mouse).
+/// `Pluma --probe [file]`: read-only diagnostics (writes nothing to the mouse).
 pub fn run(out_file: Option<&str>) {
     let mut s = String::new();
     if let Err(e) = report(&mut s) {
@@ -18,7 +18,7 @@ pub fn run(out_file: Option<&str>) {
     }
 }
 
-/// `pluma --dump [file]`: dumps whole onboard memory sectors (read-only).
+/// `Pluma --dump [file]`: dumps whole onboard memory sectors (read-only).
 pub fn dump(out_file: Option<&str>) {
     let mut s = String::new();
     if let Err(e) = dump_inner(&mut s) {
@@ -79,7 +79,7 @@ fn dump_inner(s: &mut String) -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-/// `pluma --status`: one line with the mouse state (read-only).
+/// `Pluma --status`: one line with the mouse state (read-only).
 pub fn status() {
     let run = || -> Result<String, Box<dyn std::error::Error>> {
         let api = hidapi::HidApi::new()?;
@@ -101,11 +101,11 @@ pub fn status() {
     }
 }
 
-/// `pluma --select 0x0101`: tries to activate a profile (doesn't write memory) and prints the result.
+/// `Pluma --select 0x0101`: tries to activate a profile (doesn't write memory) and prints the result.
 pub fn select(arg: Option<&str>) {
     let sector = arg.and_then(|a| u16::from_str_radix(a.trim_start_matches("0x"), 16).ok());
     let Some(sector) = sector else {
-        println!("usage: pluma --select 0x0101");
+        println!("usage: Pluma --select 0x0101");
         return;
     };
     let run = || -> Result<String, Box<dyn std::error::Error>> {

@@ -29,7 +29,7 @@ mouse's own memory**, so they always work, even with no app running.
 
 ## Usage
 
-Download `pluma.exe` from [Releases](../../releases) and run it. No installation needed.
+Download `Pluma.exe` from [Releases](../../releases) and run it. No installation needed.
 
 Tested with the **PRO X 2 (Superlight 2)**. It should work with Logitech G mice that use
 HID++ 2.0, over LIGHTSPEED or cable, on Windows 10/11. Lighting, button remapping and macros
@@ -40,7 +40,7 @@ aren't supported.
 Requires [Rust](https://rustup.rs) with the `stable-x86_64-pc-windows-gnu` toolchain (no Visual Studio needed).
 
 ```powershell
-.\build.ps1   # outputs dist\pluma.exe
+.\build.ps1   # outputs dist\Pluma.exe
 ```
 
 ## License
